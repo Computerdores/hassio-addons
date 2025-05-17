@@ -15,3 +15,10 @@ COPY run.sh /
 RUN chmod a+x /run.sh
 
 ENTRYPOINT [ "/run.sh" ]
+
+HEALTHCHECK \
+    --interval=5s \
+    --retries=5 \
+    --start-period=30s \
+    --timeout=25s \
+    CMD pgrep qbittorrent || exit 1
