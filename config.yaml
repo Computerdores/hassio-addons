@@ -1,6 +1,6 @@
 name: "qBitTorrent-WireGuard"
 description: "qBitTorrent with WireGuard and automatic Port Forwarding"
-version: "1.3.8"
+version: "1.3.11"
 slug: "qbittorrent_wg"
 init: false
 arch:
@@ -19,11 +19,13 @@ map:
   - "addon_config:rw"
   - "share:rw"
 options:
-  lan_network: "localhost,127.0.0.1,172.30.0.0/16,192.168.0.0/16"
   enable_protonvpn_port_forwarding: false
+  lan_network: "localhost,127.0.0.1,172.30.0.0/16,192.168.0.0/16"
+  name_servers: "1.1.1.1,1.0.0.1"
 schema:
-  lan_network: str
   enable_protonvpn_port_forwarding: bool
+  lan_network: str
+  name_servers: str
 environment:
   QBT_LEGAL_NOTICE: "confirm"
   TZ: "Europe/Berlin"
