@@ -1,0 +1,29 @@
+name: "qBitTorrent-WireGuard"
+description: "qBitTorrent with WireGuard and automatic Port Forwarding"
+version: "1.3.7"
+slug: "qbittorrent_wg"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+privileged:
+  - SYS_ADMIN
+  - NET_ADMIN
+  - DAC_READ_SEARCH
+ingress: true
+ingress_port: 8080
+map:
+  - "addon_config:rw"
+  - "share:rw"
+options:
+  lan_network: "localhost,127.0.0.1,172.30.0.0/16,192.168.0.0/16"
+  enable_protonvpn_port_forwarding: false
+schema:
+  lan_network: str
+  enable_protonvpn_port_forwarding: bool
+environment:
+  QBT_LEGAL_NOTICE: "confirm"
+  TZ: "Europe/Berlin"

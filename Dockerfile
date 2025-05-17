@@ -1,0 +1,17 @@
+FROM tenseiken/qbittorrent-wireguard
+
+# Install Bashio 0.17.0
+RUN mkdir -p /tmp/bashio
+RUN curl -f -L -s -S "https://github.com/hassio-addons/bashio/archive/v0.17.0.tar.gz" | tar -xzf - --strip 1 -C /tmp/bashio
+RUN mv /tmp/bashio/lib /usr/lib/bashio
+RUN ln -s /usr/lib/bashio/bashio /usr/bin/bashio
+RUN rm -rf /tmp/bashio
+
+RUN sed -i '1s|^#!.*$|&\n echo [INFO] External IP: $(curl -s icanhazip.com)|' /etc/qbittorrent/start.sh
+
+
+# Copy data for add-on
+COPY run.sh /
+RUN chmod a+x /run.sh
+
+ENTRYPOINT [ "/run.sh" ]
