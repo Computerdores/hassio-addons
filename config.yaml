@@ -1,6 +1,6 @@
-name: "qBitTorrent-WireGuard"
-description: "qBitTorrent with WireGuard and automatic Port Forwarding"
-version: "1.3.11"
+name: "qBittorrent-WireGuard"
+description: "qBittorrent with WireGuard and automatic Port Forwarding for ProtonVPN"
+version: "1.3.14"
 slug: "qbittorrent_wg"
 init: false
 arch:

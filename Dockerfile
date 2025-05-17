@@ -7,8 +7,16 @@ RUN mv /tmp/bashio/lib /usr/lib/bashio
 RUN ln -s /usr/lib/bashio/bashio /usr/bin/bashio
 RUN rm -rf /tmp/bashio
 
+# Print External IP on startup
 RUN sed -i '1s|^#!.*$|&\n echo [INFO] External IP: $(curl -s icanhazip.com)|' /etc/qbittorrent/start.sh
 
+# Edit Default QBitTorrent Config
+RUN echo ''                                      >> /etc/qbittorrent/qBittorrent.conf
+RUN echo 'WebUI\RootFolder="/etc/vuetorrent"'    >> /etc/qbittorrent/qBittorrent.conf
+RUN echo 'WebUI\AlternativeUIEnabled=true'       >> /etc/qbittorrent/qBittorrent.conf
+RUN echo 'WebUI\AuthSubnetWhitelistEnabled=true' >> /etc/qbittorrent/qBittorrent.conf
+RUN echo 'WebUI\AuthSubnetWhitelist=localhost, 127.0.0.1, 172.30.0.0/16, 192.168.0.0/16'   >> /etc/qbittorrent/qBittorrent.conf
+RUN sed -i 's|/downloads|/share/qBittorrent|g' /etc/qbittorrent/qBittorrent.conf
 
 # Copy data for add-on
 COPY run.sh /
