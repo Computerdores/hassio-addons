@@ -1,0 +1,3 @@
+[submodule "qbittorrent_wireguard"]
+	path = qbittorrent_wireguard
+	url = https://github.com/Computerdores/hassio-qbittorrent-wireguard.git
