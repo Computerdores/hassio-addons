@@ -1,6 +1,6 @@
 # Home Assistant Add-on: qBittorrent-Wireguard
 
-_qBittorrent with WireGuard and automatic Port Forwarding for ProtonVPN._
+_qBittorrent and WireGuard with automatic Port Forwarding for ProtonVPN._
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]

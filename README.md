@@ -14,7 +14,7 @@ This repository contains the following add-ons
 ![Supports armv7 Architecture][armv7-shield]
 ![Supports i386 Architecture][i386-shield]
 
-_qBittorrent with WireGuard and automatic Port Forwarding for ProtonVPN._
+_qBittorrent and WireGuard with automatic Port Forwarding for ProtonVPN._
 
 <!--
 
