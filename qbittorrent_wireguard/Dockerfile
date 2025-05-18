@@ -1,4 +1,4 @@
-FROM tenseiken/qbittorrent-wireguard
+FROM tenseiken/qbittorrent-wireguard:5.1.0
 
 # Install Bashio 0.17.0
 RUN mkdir -p /tmp/bashio
