@@ -1,4 +1,10 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
+build_from:
+  aarch64: "tenseiken/qbittorrent-wireguard:5.1.0"
+  amd64: "tenseiken/qbittorrent-wireguard:5.1.0"
+  armhf: "tenseiken/qbittorrent-wireguard:5.1.0"
+  armv7: "tenseiken/qbittorrent-wireguard:5.1.0"
+  i386: "tenseiken/qbittorrent-wireguard:5.1.0"
 labels:
   org.opencontainers.image.title: "Home Assistant Add-on: qBittorrent-Wireguard"
   org.opencontainers.image.description: "qBittorrent and WireGuard with automatic Port Forwarding for ProtonVPN."
